@@ -15,10 +15,16 @@ void Session_close(Dart_NativeArguments arguments)
 
 void Session_new(Dart_NativeArguments arguments)
 {
-    // Read the URL sent by the user.
-    Dart_Handle urlHandle = Dart_GetNativeArgument(arguments, 0);
+    // Read the data sent by the user.
+    Dart_Handle completerHashCodeHandle = Dart_GetNativeArgument(arguments, 0);
+    Dart_Handle urlHandle = Dart_GetNativeArgument(arguments, 1);
+    Dart_Handle sendPortHandle = Dart_GetNativeArgument(arguments, 2);
+    uint64_t completerHashCode;
     const char *url;
+    Dart_Port sendPort;
+    HandleError(Dart_IntegerToUint64(completerHashCodeHandle, &completerHashCode));
     HandleError(Dart_StringToCString(urlHandle, &url));
+    HandleError(Dart_SendPortGetId(sendPortHandle, &sendPort));
 
     // (Attempt to) connect to the database.
     char connectionError[MYSQLX_MAX_ERROR_LEN];
