@@ -1,0 +1,10 @@
+sources:
+  - mysql|lib/src/dart_mysql_connector.cc
+link:
+  - mysqlcppconn8
+third_party:
+  mysql_connector:
+    git: https://github.com/mysql/mysql-connector-cpp.git
+    commit: 36b7e30
+    link:
+      - .
