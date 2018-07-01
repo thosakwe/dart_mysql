@@ -4,6 +4,7 @@ sources:
   - mysql|lib/src/dart_mysql_connector.cc
   - mysql|lib/src/session.cc
 link:
+  #- mysqlcppconn8
   - mysqlcppconn8
 third_party:
   mysql_connector:
@@ -13,3 +14,5 @@ third_party:
       - include
     link:
       - .
+    libraries:
+      - libmysqlcppconn8.1.dylib

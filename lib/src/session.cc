@@ -38,6 +38,6 @@ void Session_new(Dart_NativeArguments arguments)
     Dart_Handle result = Dart_NewList(3);
     Dart_ListSetAt(result, 0, Dart_Null());
     Dart_ListSetAt(result, 1, Dart_Null());
-    Dart_ListSetAt(result, 1, Dart_NewIntegerFromUint64((uint64_t)session));
+    Dart_ListSetAt(result, 2, Dart_NewIntegerFromUint64((uint64_t)session));
     Dart_SetReturnValue(arguments, result);
 }

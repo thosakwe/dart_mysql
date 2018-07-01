@@ -27,7 +27,7 @@ class MySqlSession {
     return new Future.value();
   }
 
-  void _close(int pointer) native "Session_close";
+  static void _close(int pointer) native "Session_close";
 
   Future close() {
     if (_isOpen) {

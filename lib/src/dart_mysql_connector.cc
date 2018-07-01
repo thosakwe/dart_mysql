@@ -31,6 +31,7 @@ Dart_NativeFunction ResolveName(Dart_Handle name, int argc, bool* auto_setup_sco
   const char* cname;
   HandleError(Dart_StringToCString(name, &cname));
 
+  if (strcmp("Session_close", cname) == 0) result = Session_close;
   if (strcmp("Session_new", cname) == 0) result = Session_new;
   return result;
 }

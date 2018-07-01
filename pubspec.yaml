@@ -1,6 +1,6 @@
 name: mysql
 dependencies:
-  build_native: ^0.0.7
+  build_native: ^0.0.8
   #build_native:
   #  path: ../build_native/build_native
   tuple: ^1.0.0
